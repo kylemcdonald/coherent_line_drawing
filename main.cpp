@@ -53,14 +53,21 @@ void CLD(Mat src, Mat &dst, int halfw = 4, int smoothPasses = 2, double sigma1 =
 int main(int argc, char *argv[]) {
     argc--;
     argv++;
-    if (argc < 2) {
-        fprintf(stderr, "main in.png out.png\n"); exit(1);
+    if (argc < 7) {
+    	fprintf(stderr, "main in.png out.png halfw smoothPasses sigma1 sigma2 tau\n"); exit(1);
     }
+
+    int halfw = std::atoi(argv[2]);
+    int smoothPasses = std::atoi(argv[3]);
+    double sigma1 = std::atof(argv[4]);
+    double sigma2 = std::atof(argv[5]);
+    double tau = std::atof(argv[6]);
+
     Mat image;
     image = cv::imread(argv[0], CV_LOAD_IMAGE_GRAYSCALE);
 
     Mat out_image;
-    CLD(image, out_image);
+    CLD(image, out_image, halfw, smoothPasses, sigma1, sigma2, tau);
 
     cv::imwrite(argv[1], out_image);
     return 0;

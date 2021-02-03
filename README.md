@@ -1,3 +1,6 @@
+#
+FORKED to take in command line args :)
+
 # coherent_line_drawing
 Coherent Line Drawing standalone program source
 
@@ -9,5 +12,5 @@ The project website for that paper is here:
 Install OpenCV and compile with:
 
 ```
-g++ *.cpp -o main `pkg-config --libs opencv`
+g++ *.cpp -o cld `pkg-config --libs opencv`
 ```
