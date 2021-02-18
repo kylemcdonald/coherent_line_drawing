@@ -1,6 +1,3 @@
-#
-FORKED to take in command line args :)
-
 # coherent_line_drawing
 Coherent Line Drawing standalone program source
 
@@ -9,8 +6,12 @@ Source code was modified from the paper 'Coherent Line Drawing' by Kang et al, P
 The project website for that paper is here:
   http://cg.postech.ac.kr/research/coherent_line/
 
-Install OpenCV and compile with:
+Install OpenCV 4 and compile:
 
-```
-g++ *.cpp -o cld `pkg-config --libs opencv`
+```console
+sudo apt update
+sudo apt install libopencv-dev
+cd ~ && git clone https://github.com/aman-tiwari/coherent_line_drawing.git
+cd coherent_line_drawing
+bash build.sh
 ```

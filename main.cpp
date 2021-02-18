@@ -64,7 +64,7 @@ int main(int argc, char *argv[]) {
     double tau = std::atof(argv[6]);
 
     Mat image;
-    image = cv::imread(argv[0], CV_LOAD_IMAGE_GRAYSCALE);
+    image = cv::imread(argv[0], cv::IMREAD_GRAYSCALE);
 
     Mat out_image;
     CLD(image, out_image, halfw, smoothPasses, sigma1, sigma2, tau);
